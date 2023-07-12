@@ -136,7 +136,7 @@ class Borica {
         $message = '';
 
         foreach ($macFields[$data['TRTYPE']] as $field) {
-            $value = $data[$field];
+            $value = isset($data[$field]) ? $data[$field] : null;
 
             // When field is missing, use symbol `-`
             if (mb_strlen($value) == 0) {
@@ -164,7 +164,7 @@ class Borica {
         $message = '';
 
         foreach ($macFields[$data['TRTYPE']] as $field) {
-            $value = $data[$field];
+            $value = isset($data[$field]) ? $data[$field] : null;
 
             // When field in response is missing, use symbol `-`
             if ($isResponse && mb_strlen($value) == 0) {
