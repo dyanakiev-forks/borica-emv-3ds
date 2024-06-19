@@ -97,6 +97,11 @@ class SaleRequest extends Request {
             $postData['MERCH_URL'] = $this->merchantUrl;
         }
 
+        if ($this->mInfo) {
+            $postData['M_INFO'] = base64_encode($this->mInfo);
+        }
+
+
         return $postData;
     }
 }
